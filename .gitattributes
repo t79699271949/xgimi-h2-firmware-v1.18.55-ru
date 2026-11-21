@@ -1,0 +1,13 @@
+# Скрипты и shell-файлы ОБЯЗАТЕЛЬНО с LF —
+# с CRLF шебанг ломается и хук молча не запускается
+*.sh    text eol=lf
+*.txt   text eol=lf
+*.md    text eol=lf
+*.ini   text eol=lf
+
+# Бинарные форматы не трогать
+*.bin   binary
+*.img   binary
+*.apk   binary
+*.zip   binary
+*.keystore binary

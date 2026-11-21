@@ -1,0 +1,20 @@
+# Firmware images — too big for git, attach to GitHub Releases
+*.bin
+*.img
+pack/
+fw/work/
+
+# Build artifacts
+*.apk
+*.zip
+!docs/*.zip
+
+# Keystores and secrets
+*.keystore
+*.jks
+secrets*
+*.token
+
+# OS
+.DS_Store
+Thumbs.db

@@ -23,6 +23,37 @@ Step-by-step flashing guide: **[FLASHING.md](FLASHING.md)**.
 
 ---
 
+## ⚠️ Compatibility — read before downloading
+
+**For XGIMI H2 only**, platform `synsepalum_YN` (the device reports itself as "XGIMI TV", MStar SoC,
+Android 6.0). The hardware model in the official firmware filename is `XHAD01`.
+
+### The Chinese and the global H2 are different systems
+
+This build is based on the official **1.18.55 Chinese-branch** firmware: no Google services, but with
+Chinese XGIMI components and `kuyun`. The global H2 runs a **different system**, and the two are
+**not interchangeable** — XGIMI states they are "completely different systems" and cross-region
+flashing causes "booting issues, system crash".
+
+| Variant | Compatible |
+|---|---|
+| XGIMI H2 (Chinese version, MStar, Android 6) | ✅ yes |
+| XGIMI H2 global (different system) | ❌ do not flash |
+| XGIMI H1 / H1s | ❌ do not flash |
+| XGIMI H2 Slim | ❌ do not flash |
+| XGIMI H3, Horizon, MoGo, Elfin, Halo, Aura | ❌ do not flash |
+
+### How to check your model
+
+1. **Settings → About projector** — model and firmware version
+2. The filename of the official firmware you downloaded from XGIMI for your device
+3. Visually: the H2 has a Harman/Kardon speaker bar and 1080p output; the H2 Slim is the compact one
+
+**If in doubt — don't flash.** An image for the wrong region or model can brick the projector with no
+way back.
+
+---
+
 ## What you get
 
 | Area | Result |

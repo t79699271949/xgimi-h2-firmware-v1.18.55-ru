@@ -11,6 +11,18 @@ Android 6.0 / API 23, сборка `aosp_synsepalum_YN-userdebug`).
 
 ---
 
+## 📥 Скачать прошивку
+
+**[Скачать файл прошивки (≈ 1 ГБ)](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases/download/v1.18.55-c34/GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin)**
+
+- Все релизы: [Releases](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases)
+- Файл называется `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin` — других `.bin` на флешке быть не должно
+- SHA256 для проверки: `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` (см. [checksums.txt](checksums.txt))
+
+Инструкция по прошивке — **[FLASHING.md](FLASHING.md)** (пошагово, для человека без опыта).
+
+---
+
 ## Что вы получаете
 
 | Область | Результат |

@@ -11,6 +11,18 @@ installed by hand.
 
 ---
 
+## 📥 Download
+
+**[Download the firmware image (≈ 1 GB)](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases/download/v1.18.55-c34/GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin)**
+
+- All releases: [Releases](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases)
+- The file is `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin` — no other `.bin` may be on the USB drive
+- SHA256 for verification: `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` (see [checksums.txt](checksums.txt))
+
+Step-by-step flashing guide: **[FLASHING.md](FLASHING.md)**.
+
+---
+
 ## What you get
 
 | Area | Result |

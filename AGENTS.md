@@ -14,7 +14,8 @@
 | Android | 6.0 / API 23 / MRA58K |
 | Сборка | `aosp_synsepalum_YN-userdebug` |
 | Архитектура | ARM64 ядро (`3.10.86`), userspace 32-бит |
-| Базовая прошивка | официальная **1.18.55** |
+| Базовая прошивка | официальная **1.18.55**, **китайская ветка** (нет сервисов Google, есть `kuyun`) |
+| Регион | CN. Глобальный H2 — **другая система**, образы несовместимы (XGIMI: «completely different systems», booting issues / system crash) |
 | Рабочая сборка | **C34** (`sys_c34.img`, 371 077 блоков) |
 | Файл прошивки | `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin`, 1 047 404 576 Б |
 | SHA256 | `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` |

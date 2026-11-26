@@ -1,8 +1,8 @@
-# XGIMI H2 — Russian firmware 1.18.55 (build C34)
+# XGIMI H2 — Russian firmware 1.18.55 (build C38)
 # Verify downloads with:  Get-FileHash <file> -Algorithm SHA256   (PowerShell)
 # or:                    sha256sum <file>                         (Linux/macOS)
 
-69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b  GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin   (1047404576 bytes)
+9baba60ef447674921ec08f0925e67f79f44b6f17463f73f7bb85c5cd1398d5a  GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin   (1047355424 bytes)
 
 # Per-file hashes of the build scripts
 f6abb70f66d6fd44681e238a8e40998f7948284376279d8d49885d4e73895871  scripts/c33_build.sh

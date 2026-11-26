@@ -1,4 +1,4 @@
-# XGIMI H2 — русская прошивка 1.18.55 (сборка C34)
+# XGIMI H2 — русская прошивка 1.18.55 (сборка C38)
 
 Неофициальная, сделанная сообществом **русифицированная прошивка для проектора XGIMI H2** (SoC MStar,
 Android 6.0 / API 23, сборка `aosp_synsepalum_YN-userdebug`).
@@ -17,7 +17,7 @@ Android 6.0 / API 23, сборка `aosp_synsepalum_YN-userdebug`).
 
 - Все релизы: [Releases](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases)
 - Файл называется `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin` — других `.bin` на флешке быть не должно
-- SHA256 для проверки: `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` (см. [checksums.txt](checksums.txt))
+- SHA256 для проверки: `9baba60ef447674921ec08f0925e67f79f44b6f17463f73f7bb85c5cd1398d5a` (см. [checksums.txt](checksums.txt))
 
 Инструкция по прошивке — **[FLASHING.md](FLASHING.md)** (пошагово, для человека без опыта).
 
@@ -100,7 +100,7 @@ different systems» и перепрошивка между регионами п
 - [docs/build.md](docs/build.md) — как собирается образ (debugfs, упаковка, лимиты размера)
 - [docs/overlay.md](docs/overlay.md) — как применяются переводы без правки APK (RRO)
 - [docs/pitfalls.md](docs/pitfalls.md) — ошибки, которые стоили часов; прочитать до любых изменений
-- [CHANGELOG.md](CHANGELOG.md) — история сборок C1 → C34
+- [CHANGELOG.md](CHANGELOG.md) — история сборок C1 → C38
 
 ## Авторы и правовой статус
 

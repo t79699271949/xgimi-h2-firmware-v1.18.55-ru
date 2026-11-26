@@ -16,9 +16,9 @@
 | Архитектура | ARM64 ядро (`3.10.86`), userspace 32-бит |
 | Базовая прошивка | официальная **1.18.55**, **китайская ветка** (нет сервисов Google, есть `kuyun`) |
 | Регион | CN. Глобальный H2 — **другая система**, образы несовместимы (XGIMI: «completely different systems», booting issues / system crash) |
-| Рабочая сборка | **C34** (`sys_c34.img`, 371 077 блоков) |
-| Файл прошивки | `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin`, 1 047 404 576 Б |
-| SHA256 | `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` |
+| Рабочая сборка | **C38** (`sys_c38.img`, 371 077 блоков) |
+| Файл прошивки | `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin`, 1 047 355 424 Б |
+| SHA256 | `9baba60ef447674921ec08f0925e67f79f44b6f17463f73f7bb85c5cd1398d5a` |
 
 ## 2. Жёсткие правила (нарушение = кирпич или потеря данных)
 
@@ -60,11 +60,19 @@ assert open(path, "rb").read().count(b"\r\n") == 0
 
 То же самое: `bootanimation.zip`/`shutdownanimation.zip` с `\r\n` в `desc.txt` не проигрывается.
 
-### 2.7 Русификация сторонних APK — только overlay (RRO)
+### 2.7 Русификация: overlay для строк, перепаковка APK для массивов
 
-Пересборка системных APK ломает подпись и меню. Правильный путь: `/vendor/overlay/ru-*.apk` с
-`targetPackage` и строками (`values-ru`). Сторонние приложения (Aerial) overlay **не принимают** —
-для них берётся APK с официальным русским.
+- **Строки** — через `/vendor/overlay/ru-*.apk` (`targetPackage` + `res/values/strings.xml`).
+- **`string-array` overlay НЕ подменяет** (`idmap` v1, Android 6, массивов не поддерживает) — проверено
+  на C36: массивы не применились ни в default, ни в `values-ru`.
+- **Системные APK можно пересобирать:** `framework-res`, `setting`, `GimiSystemUI`, `xgimi-skinconfig`
+  подписаны **публичным тестовым ключом AOSP** (`platform.pk8`, SHA-256
+  `c8a2e9bccf597c2fb6dc66bee293fc13f2fc47ec77bc6b2b0d52c11f51192ab8`). Подписывать тем же ключом
+  (`--v1-signing-enabled true --v2-signing-enabled false`) → PMS принимает замену.
+- Надёжный способ правки APK без поломок: **взять оригинальный APK и заменить в нём только
+  `resources.arsc`** (полная перепаковка через `apktool b` дала падение AutoSize
+  «you must set design_width_in_dp»).
+- Сторонние приложения (Aerial) overlay не принимают — только перепаковка APK.
 
 ### 2.8 Заголовок `.bin` — простой
 
@@ -100,9 +108,11 @@ cd mbt && cp ../fw/work/sys_c34.img pack/system.img && python pack.py configs/cu
 
 | Путь | Содержимое |
 |---|---|
-| `/vendor/overlay/ru-*.apk` | 12 overlay-пакетов с русскими строками (~2 100 строк) |
-| `/etc/restore-apps/` | 7 APK, устанавливаются хуком после загрузки |
-| `/bin/install-recovery.sh` | хук: ADB, чистка 39 пакетов, установка приложений, отключение Sogou, настройка голоса/лаунчера |
+| `/vendor/overlay/ru-*.apk` | 16 overlay-пакетов с русскими строками |
+| `/etc/restore-apps/` | 8 APK (в т.ч. Aerial 2.20 и мостик настроек), ставит хук |
+| `/bin/install-recovery.sh` | хук: ADB, деблоат, установка приложений, настройка голоса/лаунчера |
+| `/etc/security/cacerts/6187b673.0`, `8794b4e3.0` | ISRG Root X1/X2 (иначе нет TLS к Let's Encrypt) |
+| `/framework/xgimi-skinconfig/xgimi-skinconfig.apk` | имена тем в `assets/default_skin.json` (переведены) |
 | `/media/shutdownanimation.zip` | русская анимация выключения (182 748 Б) |
 | `/media/rebootanimation.zip` | русская анимация перезагрузки (190 107 Б) |
 | `/media/bootanimation.zip` | оригинальная (2 038 823 Б) — не менялась |

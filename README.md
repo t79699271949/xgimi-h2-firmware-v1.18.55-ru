@@ -1,4 +1,4 @@
-# XGIMI H2 — Russian firmware 1.18.55 (build C34)
+# XGIMI H2 — Russian firmware 1.18.55 (build C38)
 
 Unofficial, community-made **Russian-localized firmware for the XGIMI H2 projector** (MStar SoC,
 Android 6.0 / API 23, build `aosp_synsepalum_YN-userdebug`).
@@ -17,7 +17,7 @@ installed by hand.
 
 - All releases: [Releases](https://github.com/t79699271949/xgimi-h2-firmware-v1.18.55-ru/releases)
 - The file is `GIMI_XHAD01_XHC05_MAXIM_YN_WMP.bin` — no other `.bin` may be on the USB drive
-- SHA256 for verification: `69fffe49fbf7dc858badac32cf0999f943e2e355a5a384cd8b70e749e911601b` (see [checksums.txt](checksums.txt))
+- SHA256 for verification: `9baba60ef447674921ec08f0925e67f79f44b6f17463f73f7bb85c5cd1398d5a` (see [checksums.txt](checksums.txt))
 
 Step-by-step flashing guide: **[FLASHING.md](FLASHING.md)**.
 
@@ -100,7 +100,7 @@ the hard rules of this image (what must never be touched, image size limits, kno
 - [docs/build.md](docs/build.md) — how the image is assembled (debugfs, packing, size limits)
 - [docs/overlay.md](docs/overlay.md) — how the translations are applied without touching APKs (RRO)
 - [docs/pitfalls.md](docs/pitfalls.md) — mistakes that cost hours; read before changing anything
-- [CHANGELOG.md](CHANGELOG.md) — build history C1 → C34
+- [CHANGELOG.md](CHANGELOG.md) — build history C1 → C38
 
 ## Credits & legal
 
